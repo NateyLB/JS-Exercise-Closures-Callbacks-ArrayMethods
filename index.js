@@ -173,7 +173,7 @@ if(bool != true){
  * should return 3.
 */
 function processDuplicateFree(list, callback) {
- return list.filter((item,index) => list.indexOf(item) === index)
+ return list.filter((item,index) => list.indexOf(item) === index);
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
@@ -194,8 +194,10 @@ function processDuplicateFree(list, callback) {
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
-  /* CODE HERE */
+function getFullNames(runners) {
+    var newRunners = [];
+    runners.forEach(runner => newRunners.push(`${runner.last_name}, ${runner.first_name}`));
+    return newRunners
 }
 
 /**
