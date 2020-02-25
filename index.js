@@ -196,7 +196,7 @@ function processDuplicateFree(list, callback) {
 */
 function getFullNames(runners) {
     var newRunners = [];
-    runners.forEach(runner => newRunners.push(`${runner.last_name}, ${runner.first_name}`));
+    runners.forEach(currentValue => newRunners.push(`${currentValue.last_name}, ${currentValue.first_name}`));
     return newRunners
 }
 
@@ -265,13 +265,12 @@ function tallyUpDonations(/* CODE HERE */) {
 */
 function counterMaker() {
   // BROKEN CODE STARTS
-  const count = 0;
-  function counter() {
-    ++count
+  var count = 0;
+  return function counter() {
+    return count++
   }
   // BROKEN CODE ENDS
 }
-
 /**
  * ### Challenge `counterMakerWithLimit`
  * 
