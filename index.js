@@ -212,8 +212,9 @@ function getFullNames(runners) {
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
-function firstNamesAllCaps(/* CODE HERE */) {
-  /* CODE HERE */
+function firstNamesAllCaps(runners) {
+  var firstNames = runners.map(currentValue => currentValue.first_name.toUpperCase());
+  return firstNames
 }
 
 /**
@@ -229,8 +230,9 @@ function firstNamesAllCaps(/* CODE HERE */) {
  * @returns an array containing only the runners that use the given `tShirtSize`.
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
-function getRunnersByTShirtSize(/* CODE HERE */) {
-  /* CODE HERE */
+function getRunnersByTShirtSize(runners, tShirtSize) {
+  var sizes = runners.filter(currentValue=> currentValue.shirt_size == tShirtSize );
+  return sizes
 }
 
 /**
@@ -264,12 +266,10 @@ function tallyUpDonations(/* CODE HERE */) {
  * etc
 */
 function counterMaker() {
-  // BROKEN CODE STARTS
   var count = 0;
   return function counter() {
     return count++
   }
-  // BROKEN CODE ENDS
 }
 /**
  * ### Challenge `counterMakerWithLimit`
@@ -291,8 +291,8 @@ function counterMaker() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(/* CODE HERE */) {
-  /* CODE HERE */
+function counterMakerWithLimit(maxValue) {
+  
 }
 
 /////////////// END OF CHALLENGE ///////////////
