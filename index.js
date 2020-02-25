@@ -15,7 +15,7 @@
  * should return 'foofoo'.
 */
 function processFirstItem(stringList, callback) {
-  return callback(stringList[0])
+  return callback(stringList[0]);
 }
 
 // ⭐️ Example Challenge END ⭐️
@@ -67,8 +67,8 @@ function processLength(array, callback) {
  * should return 'barbar'.
 */
 function processLastItem(array, callback) {
-  var last = array.length-1
-  return callback(array[last])
+  var last = array.length-1;
+  return callback(array[last]);
 }
 
 /**
@@ -93,7 +93,7 @@ function processSum(numberList, callback) {
   for( var i = 0; i<numberList.length; i++){
     sum += numberList[i];
   }
-  return callback(sum)
+  return callback(sum);
 
 }
 
@@ -117,7 +117,7 @@ function processSum(numberList, callback) {
 */
 function processProduct(num1, num2, callback) {
   var product = num1*num2;
-  return callback(product)
+  return callback(product);
 }
 
 /**
@@ -144,13 +144,13 @@ function processContains(item, list, callback) {
   var bool;
   for( var i = 0; i<list.length; i++){
   if (item == list[i]){
-    return bool = true
+    return bool = true;
   }
 }
 if(bool != true){
-  return bool = false
+  return bool = false;
 }
-  return callback(bool)
+  return callback(bool);
 }
 
 /**
@@ -197,7 +197,7 @@ function processDuplicateFree(list, callback) {
 function getFullNames(runners) {
     var newRunners = [];
     runners.forEach(currentValue => newRunners.push(`${currentValue.last_name}, ${currentValue.first_name}`));
-    return newRunners
+    return newRunners;
 }
 
 /**
@@ -214,7 +214,7 @@ function getFullNames(runners) {
 */
 function firstNamesAllCaps(runners) {
   var firstNames = runners.map(currentValue => currentValue.first_name.toUpperCase());
-  return firstNames
+  return firstNames;
 }
 
 /**
@@ -232,7 +232,7 @@ function firstNamesAllCaps(runners) {
 */
 function getRunnersByTShirtSize(runners, tShirtSize) {
   var sizes = runners.filter(currentValue=> currentValue.shirt_size == tShirtSize );
-  return sizes
+  return sizes;
 }
 
 /**
@@ -245,8 +245,11 @@ function getRunnersByTShirtSize(runners, tShirtSize) {
  * @param runners array of runners like the one inside the /data/runners.js file.
  * @returns a number which is the sum of the donations by all runners.
 */
-function tallyUpDonations(/* CODE HERE */) {
-  /* CODE HERE */
+function tallyUpDonations(runners) {
+  var tally = runners.reduce((total, runner) => {
+    return total += runner.donation;
+  },0)
+  return tally;
 }
 
 /////////////// CLOSURES ///////////////
