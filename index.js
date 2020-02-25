@@ -48,8 +48,8 @@ function processFirstItem(stringList, callback) {
  * [2] Invoking `processLength` passing `[]` and `(num) => "There are " + num`,
  * should return "There are 0".
 */
-function processLength(array, callback) {
- return callback(array.length);
+function processLength(list, callback) {
+ return callback(list.length);
 }
 
 /**
@@ -66,9 +66,9 @@ function processLength(array, callback) {
  * Invoking `processLastItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'barbar'.
 */
-function processLastItem(array, callback) {
-  var last = array.length-1;
-  return callback(array[last]);
+function processLastItem(stringList, callback) {
+  var last = stringList.length-1;
+  return callback(stringList[last]);
 }
 
 /**
@@ -295,7 +295,13 @@ function counterMaker() {
  * etc
 */
 function counterMakerWithLimit(maxValue) {
-  
+  var count = 0;
+  return function counter() {
+    if(count == maxValue+1){
+      count = 0;
+    }
+    return count++
+  }
 }
 
 /////////////// END OF CHALLENGE ///////////////
