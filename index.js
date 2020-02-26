@@ -67,8 +67,7 @@ function processLength(list, callback) {
  * should return 'barbar'.
 */
 function processLastItem(stringList, callback) {
-  var last = stringList.length-1;
-  return callback(stringList[last]);
+  return callback(stringList[stringList.length-1]);
 }
 
 /**
@@ -116,8 +115,7 @@ function processSum(numberList, callback) {
  * should return 1000.
 */
 function processProduct(num1, num2, callback) {
-  var product = num1*num2;
-  return callback(product);
+  return callback(num1*num2);
 }
 
 /**
